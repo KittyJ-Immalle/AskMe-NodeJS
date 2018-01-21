@@ -10,11 +10,11 @@ const app = express();
 
 // Translates URLs to JSON
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Used for css, js and html
 app.set("views", path.join(__dirname, "/views"));
-app.use(express.static(path.join(__dirname, "")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // Sets the render engine for front end pages to html
 // There are other replacements for html such pug or ejs
